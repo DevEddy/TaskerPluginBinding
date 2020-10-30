@@ -12,5 +12,10 @@
     <releaseNotes>Initial release.</releaseNotes>
     <copyright>Eduard Schäfer</copyright>
     <tags>tasker plugin</tags>
+    <dependencies>
+      <group targetFramework="MonoAndroid">
+        <!--MonoAndroid dependencies go here-->
+      </group>
+    </dependencies>    
   </metadata>
 </package>

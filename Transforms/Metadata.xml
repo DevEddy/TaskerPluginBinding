@@ -1,35 +1,65 @@
 ﻿<metadata>
-  <!--
-  This sample removes the class: android.support.v4.content.AsyncTaskLoader.LoadTask:
-  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='AsyncTaskLoader.LoadTask']" />
-  
-  This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
-  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
-  -->
+  <attr path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.runner']/class[@name='IntentServiceParallel']/method[@name='onBind' and count(parameter)=1 and parameter[1][@type='android.content.Intent']]" name="managedReturn">Android.OS.IBinder</attr>
 
-  <!-- Metadata.xml XPath method reference: path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.output']/class[@name='TaskerOutputBase']/method[@name='size' and count(parameter)=0]" -->
-  <remove-node path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.output']/class[@name='TaskerOutputBase']/method[@name='size' and count(parameter)=0]" />
-  <remove-node path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.runner']/class[@name='TaskerOutputRenames']/method[@name='size' and count(parameter)=0]" />
-  <remove-node path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.input']/class[@name='TaskerInputInfos']/method[@name='size' and count(parameter)=0]" />
-  <attr path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.action']/class[@name='IntentServiceAction']" name="managedType">Java.Lang.Object</attr>
-
-  <!--/api/package[@name='com.joaomgcd.taskerpluginlibrary.output.runner']/class[@name='TaskerOutputsForRunner']" -->
-  
-  <add-node path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.runner']">
-    <class abstract="false" deprecated="not deprecated" final="false" name="TaskerOutputsForRunner" static="true" visibility="public" extends="java.lang.Object"> </class>
+  <add-node path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.action']">
+    <class abstract="false" deprecated="not deprecated" extends="com.joaomgcd.taskerpluginlibrary.runner.IntentServiceParallel" extends-generic-aware="com.joaomgcd.taskerpluginlibrary.runner.IntentServiceParallel" jni-extends="Lcom/joaomgcd/taskerpluginlibrary/runner/IntentServiceParallel;" final="true" name="IntentServiceAction" static="false" visibility="public" jni-signature="Lcom/joaomgcd/taskerpluginlibrary/action/IntentServiceAction;">
+      <method abstract="false" deprecated="not deprecated" final="false" name="onBind" jni-signature="(Landroid/content/Intent;)Landroid/os/IBinder;" bridge="false" native="false" return="global::Android.OS.IBinder" jni-return="Landroid/os/IBinder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="intent" type="android.content.Intent" jni-type="Landroid/content/Intent;" not-null="true">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="onHandleIntent" jni-signature="(Landroid/content/Intent;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="protected">
+        <parameter name="intent" type="android.content.Intent" jni-type="Landroid/content/Intent;" not-null="true">
+        </parameter>
+      </method>
+    </class>
   </add-node>
-  
+
+  <attr path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.output']/class[@name='TaskerOutputBase']/method[@name='size' and count(parameter)=0]" name="name">Size</attr>
+  <attr path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.input']/class[@name='TaskerInputInfos']/method[@name='size' and count(parameter)=0]" name="name">Size</attr>
+  <attr path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.runner']/class[@name='TaskerOutputRenames']/method[@name='size' and count(parameter)=0]" name="name">Size</attr>
+
+  <add-node path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.output.runner']">
+    <class abstract="false" deprecated="not deprecated" extends="com.joaomgcd.taskerpluginlibrary.output.TaskerOutputBase" extends-generic-aware="com.joaomgcd.taskerpluginlibrary.output.TaskerOutputBase&lt;com.joaomgcd.taskerpluginlibrary.output.runner.TaskerOutputForRunner&gt;" jni-extends="Lcom/joaomgcd/taskerpluginlibrary/output/TaskerOutputBase;" final="true" name="TaskerOutputsForRunner" static="false" visibility="public" jni-signature="Lcom/joaomgcd/taskerpluginlibrary/output/runner/TaskerOutputsForRunner;">
+      <method abstract="false" deprecated="not deprecated" final="false" name="getTaskerVariable" jni-signature="Ljava/util/List;" bridge="false" native="false" return="java.util.List" jni-return="Ljava/util/List" return-not-null="true" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="context" type="android.content.Context" jni-type="Landroid/content/Context;" not-null="true">
+        </parameter>
+        <parameter name="taskerVariable" type="com.joaomgcd.taskerpluginlibrary.output.TaskerOutputVariable" jni-type="Lcom/joaomgcd/taskerpluginlibrary/output/TaskerOutputVariable;" not-null="true">
+        </parameter>
+        <parameter name="method" type="java.lang.reflect.Method" jni-type="Ljava/lang/reflect/Method;" not-null="true">
+        </parameter>
+        <parameter name="parent" type="java.lang.Object" jni-type="Ljava/lang/Object;">
+        </parameter>
+        <parameter name="isThisList" type="boolean" jni-type="Z">
+        </parameter>
+        <parameter name="isBaseList" type="boolean" jni-type="Z">
+        </parameter>
+        <parameter name="index" type="java.util.ArrayList&lt;java.lang.Integer&gt;" jni-type="Ljava/util/ArrayList&lt;Ljava/lang/Integer;&gt;;">
+        </parameter>
+      </method>
+    </class>
+  </add-node>
+
   <add-node path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.output']">
-    <class abstract="false" deprecated="not deprecated" final="false" name="TaskerOutputsForConfig" static="true" visibility="public" extends="java.lang.Object"> </class>
+    <class abstract="false" deprecated="not deprecated" extends="com.joaomgcd.taskerpluginlibrary.output.TaskerOutputBase" extends-generic-aware="com.joaomgcd.taskerpluginlibrary.output.TaskerOutputBase&lt;com.joaomgcd.taskerpluginlibrary.output.runner.TaskerOutputForRunner&gt;" jni-extends="Lcom/joaomgcd/taskerpluginlibrary/output/TaskerOutputBase;" final="true" name="TaskerOutputsForConfig" static="false" visibility="public" jni-signature="Lcom/joaomgcd/taskerpluginlibrary/output/TaskerOutputsForConfig;">
+      <method abstract="false" deprecated="not deprecated" final="false" name="getTaskerVariable" jni-signature="Ljava/util/List;" bridge="false" native="false" return="java.util.List" jni-return="Ljava/util/List" return-not-null="true" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="context" type="android.content.Context" jni-type="Landroid/content/Context;" not-null="true">
+        </parameter>
+        <parameter name="taskerVariable" type="com.joaomgcd.taskerpluginlibrary.output.TaskerOutputVariable" jni-type="Lcom/joaomgcd/taskerpluginlibrary/output/TaskerOutputVariable;" not-null="true">
+        </parameter>
+        <parameter name="method" type="java.lang.reflect.Method" jni-type="Ljava/lang/reflect/Method;" not-null="true">
+        </parameter>
+        <parameter name="parent" type="java.lang.Object" jni-type="Ljava/lang/Object;">
+        </parameter>
+        <parameter name="isThisList" type="boolean" jni-type="Z">
+        </parameter>
+        <parameter name="isBaseList" type="boolean" jni-type="Z">
+        </parameter>
+        <parameter name="index" type="java.util.ArrayList&lt;java.lang.Integer&gt;" jni-type="Ljava/util/ArrayList&lt;Ljava/lang/Integer;&gt;;">
+        </parameter>
+      </method>
+    </class>
   </add-node>
 
-  <add-node path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.output']">
-    <class abstract="false" deprecated="not deprecated" final="false" name="TaskerOutputBase" static="true" visibility="public" extends="java.lang.Object"> </class>
-  </add-node>
-
-
-  <add-node path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.runner']">
-    <class abstract="false" deprecated="not deprecated" final="false" name="IntentServiceParallel" static="true" visibility="public" extends="java.lang.Object"> </class>
-  </add-node>
+  <attr path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.action']/class[@name='TaskerPluginRunnerAction" name="visibility">public</attr>
 
 </metadata>
