@@ -6,4 +6,30 @@
   This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
   <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
   -->
+
+  <!-- Metadata.xml XPath method reference: path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.output']/class[@name='TaskerOutputBase']/method[@name='size' and count(parameter)=0]" -->
+  <remove-node path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.output']/class[@name='TaskerOutputBase']/method[@name='size' and count(parameter)=0]" />
+  <remove-node path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.runner']/class[@name='TaskerOutputRenames']/method[@name='size' and count(parameter)=0]" />
+  <remove-node path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.input']/class[@name='TaskerInputInfos']/method[@name='size' and count(parameter)=0]" />
+  <attr path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.action']/class[@name='IntentServiceAction']" name="managedType">Java.Lang.Object</attr>
+
+  <!--/api/package[@name='com.joaomgcd.taskerpluginlibrary.output.runner']/class[@name='TaskerOutputsForRunner']" -->
+  
+  <add-node path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.runner']">
+    <class abstract="false" deprecated="not deprecated" final="false" name="TaskerOutputsForRunner" static="true" visibility="public" extends="java.lang.Object"> </class>
+  </add-node>
+  
+  <add-node path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.output']">
+    <class abstract="false" deprecated="not deprecated" final="false" name="TaskerOutputsForConfig" static="true" visibility="public" extends="java.lang.Object"> </class>
+  </add-node>
+
+  <add-node path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.output']">
+    <class abstract="false" deprecated="not deprecated" final="false" name="TaskerOutputBase" static="true" visibility="public" extends="java.lang.Object"> </class>
+  </add-node>
+
+
+  <add-node path="/api/package[@name='com.joaomgcd.taskerpluginlibrary.runner']">
+    <class abstract="false" deprecated="not deprecated" final="false" name="IntentServiceParallel" static="true" visibility="public" extends="java.lang.Object"> </class>
+  </add-node>
+
 </metadata>

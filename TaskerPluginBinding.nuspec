@@ -4,14 +4,13 @@
     <id>Tasker.Plugin.Binding</id>
     <version>0.3.3</version>
     <title>Binding for Tasker Plugin</title>
-    <authors>$author$</authors>
+    <authors>Eduard Schäfer</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
-    <projectUrl>http://project_url_here_or_delete_this_line/</projectUrl>
-    <iconUrl>http://icon_url_here_or_delete_this_line/</iconUrl>
-    <description>$description$</description>
+    <projectUrl>https://github.com/DevEddy/TaskerPluginBinding</projectUrl>
+    <description>This is a binding project for the tasker plugin</description>
     <releaseNotes>Initial release.</releaseNotes>
-    <copyright>$copyright$</copyright>
+    <copyright>Eduard Schäfer</copyright>
     <tags>tasker plugin</tags>
   </metadata>
 </package>
